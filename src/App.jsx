@@ -1,4 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+const useEffectComponent = () => {
+  useEffect(() => {
+    return () => console.log("Компонент был удален со страницы");
+  }, []);
+
+  return (
+    <div>Тестовый компонент для проверки удаления компонента co страницы</div>
+  );
+}
+
 
 const App = () => {
 
@@ -11,6 +22,15 @@ const App = () => {
     email: "",
     password: "",
   });
+
+  const [a, setA] = useState(0);
+
+  useEffect(() => {
+    console.log('Произошел первый рендер');
+
+    // При удалении компонента со страницы
+    // return () => {};
+  }, [count, form])
 
   const onChangeHandle = (event) => {
     setName(event.target.value);
@@ -39,6 +59,11 @@ const App = () => {
       <p>Вы нажали на меня {count}</p>
       <button onClick={() => setCount((prev) => prev + 1)}>+1</button>
       <button onClick={() => setCount(count + 5)}>+5</button>
+
+      {
+        count >= 10 ? <h1>Компонент больше недоступен</h1> : <useEffectComponent />
+      }
+
       <br />
       <h1>Привет, {name}!</h1>
       <input type="text" onChange={(event) => onChangeHandle(event)}/>
