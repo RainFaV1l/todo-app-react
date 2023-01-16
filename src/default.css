@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid rgba(51, 51, 51, 0.1);
+    border-radius: 12px;
+    padding: 100px;
+}
+
+.layout form {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.layout form input {
+    outline: 0;
+    border: 1px solid rgba(51, 51, 51, 0.2);
+    border-radius: 7px;
+    padding: 15px 20px;
+    width: 450px;
+    transition: all .3s ease-in-out;
+    font-size: 16px;
+}
+
+.layout form input:focus {
+    border: 1px solid rgba(191, 0, 255, 1);
+}
+
+.allQuestion {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.allQuestion>div {
+    background-color: rgba(191, 0, 255, 1);
+    border-radius: 7px;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.allQuestion>div>div {
+    display: flex;
+    gap: 15px;
+}
+
+.allQuestion>div>div>button {
+    outline: 0;
+    padding: 15px 30px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.allQuestion>div>div>button:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.allQuestion .del {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.allQuestion .del:hover {
+    background-color: #fff;
+    color: #000;
+}
